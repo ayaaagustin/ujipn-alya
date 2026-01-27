@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #e6e6ec;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #2f2f2f, #1f1f1f);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sidebar ul li i {
+    margin-right: 8px;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+    background: #3157d4;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+    background: linear-gradient(135deg, #3157d4, #6b8cff);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .title i {
+    margin-right: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.card {
+    flex: 1;
+    padding: 18px;
+    border-radius: 14px;
+    color: white;
+}
+
+.card.blue {
+    background: linear-gradient(135deg, #3157d4, #6b8cff);
+}
+
+.card.orange {
+    background: linear-gradient(135deg, #e98a31, #ffb347);
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #e98a31;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* TABLE */
+.table-box {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.table-box h3 {
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+th {
+    background: #f1f1f6;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+/* STATUS */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: white;
+}
+
+.status.proses {
+    background: #e98a31;
+}
+
+.status.selesai {
+    background: #3157d4;
+}
+
+/* css admin */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #e6e6ec;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 230px;
+    background: linear-gradient(180deg, #2f2f2f, #1f1f1f);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sidebar ul li i {
+    margin-right: 8px;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+    background: #3157d4;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+    background: linear-gradient(135deg, #3157d4, #6b8cff);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar i {
+    margin-right: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.card {
+    flex: 1;
+    padding: 18px;
+    border-radius: 14px;
+    color: white;
+}
+
+.card.blue {
+    background: linear-gradient(135deg, #3157d4, #6b8cff);
+}
+
+.card.orange {
+    background: linear-gradient(135deg, #e98a31, #ffb347);
+}
+
+.card.dark {
+    background: #2f2f2f;
+}
+
+/* untuk bagian kotak hitam diproses */
+.card h2 {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+/* TABLE */
+.table-box {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.table-box h3 {
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+th {
+    background: #f1f1f6;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+/* STATUS */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: white;
+}
+
+.status.proses {
+    background: #e98a31;
+}
+
+.status.baru {
+    background: #28b2a4;
+}
+
+.status.selesai {
+    background: #3157d4;
+}
+
+/* css dashboard siswa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #e6e6ec;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #2f2f2f, #1f1f1f);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sidebar ul li i {
+    margin-right: 8px;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+    background: #4f79ff;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+    background: linear-gradient(135deg, #4f79ff, #6b8cff);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .title i {
+    margin-right: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.card {
+    flex: 1;
+    padding: 18px;
+    border-radius: 14px;
+    color: white;
+}
+
+.card.blue {
+    background: linear-gradient(135deg, #4f79ff, #6b8cff);
+}
+
+.card.orange {
+    background: linear-gradient(135deg, #ff9f43, #ffb347);
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff9f43;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* TABLE */
+.table-box {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.table-box h3 {
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+th {
+    background: #f1f1f6;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+/* STATUS */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: white;
+}
+
+.status.proses {
+    background: #ff9f43;
+}
+
+.status.selesai {
+    background: #4f79ff;
+}

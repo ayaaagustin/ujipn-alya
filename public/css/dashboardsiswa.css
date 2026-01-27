@@ -1,0 +1,205 @@
+/* ========================
+   RESET
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+/* ========================
+   TOPBAR
+======================== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #4f79ff, #6b8cff);
+    color: white;
+}
+
+.topbar .left h2 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.topbar .right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar .user i {
+    margin-right: 5px;
+}
+
+.logout-form {
+    display: inline;
+}
+
+.logout-btn {
+    background: #ff4d4f;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-btn i {
+    margin-right: 5px;
+}
+
+/* ========================
+   CONTAINER
+======================== */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ========================
+   WELCOME
+======================== */
+.welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ========================
+   CARDS
+======================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+/* CARD COLORS */
+.blue {
+    background: linear-gradient(135deg, #4f79ff, #6b8cff);
+}
+.orange {
+    background: linear-gradient(135deg, #ff9f43, #ffb347);
+}
+.green {
+    background: linear-gradient(135deg, #27ae60, #6fcf97);
+}
+.teal {
+    background: linear-gradient(135deg, #16a085, #1abc9c);
+}
+
+/* ========================
+   SUBMIT BUTTON
+======================== */
+.submit-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #27ae60, #6fcf97);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ========================
+   TABLE
+======================== */
+.table-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-box h3 {
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f0f2f8;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ========================
+   STATUS BADGES
+======================== */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: white;
+    text-transform: capitalize; /* otomatis huruf pertama besar */
+}
+
+/* class status sesuai database */
+.status.menunggu {
+    background: #f2994a;
+} /* oranye */
+.status.diproses {
+    background: #27ae60;
+} /* hijau */
+.status.selesai {
+    background: #16a085;
+} /* teal */
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
