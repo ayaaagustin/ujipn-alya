@@ -29,7 +29,11 @@ route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardAdmin::class, 'index'])->name('dashboard');
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
-    Route::get('/form-siswa', [SiswaController::class, 'index'])->name('form-siswa');
+    Route::get('/form-siswa', [SiswaController::class, 'create'])->name('form-siswa');
+    Route::post('/tambah-siswa', [SiswaController::class, 'store'])->name('tambah-siswa');
+    Route::get('/siswa/delete/{siswa}', [SiswaController::class, 'delete'])->name('hapus-siswa'); // route model binding
+    Route::get('/siswa/edit/{siswa}', [SiswaController::class, 'edit'])->name('form-edit-siswa'); // route model binding
+    Route::put('/siswa', [SiswaController::class, 'update'])->name('edit-siswa'); // route model binding
 });
 
 // Routing untuk siswa

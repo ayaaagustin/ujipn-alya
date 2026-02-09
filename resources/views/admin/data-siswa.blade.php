@@ -2,6 +2,24 @@
 
 @section('content')
 <div class="shadow p-3">
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sukses</strong> {{ session('success') }}
+            <button type="button" class="btn-close"></button>
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Gagal</strong> {{ session('error') }}
+            <button type="button" class="btn-close"></button>
+        </div>
+    @endif
+        
+    
+    
+    <a href="{{ route('admin.form-siswa') }}" class="btn btn-success mb-4 px-4">
+        <i class="fas fa-plus"></i>Tambah Data Siswa
+    </a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -24,10 +42,10 @@
                     <td>{{ $sis->kelas }}</td>
                     <td>{{ $sis->jurusan }}</td>
                     <td class="text-center">
-                        <a href="#" class="btn btn-sm btn-info me-2">
+                        <a href="/admin/siswa/edit/{{ $sis->id }}" class="btn btn-sm btn-info me-2">
                             <i class="fas fa-edit"></i> Edit
                         </a>
-                        <a href="#" class="btn btn-sm btn-danger"
+                        <a href="/admin/siswa/delete/{{ $sis->id }}" class="btn btn-sm btn-danger m-0 @if ($sis->aspirasi->count() > 0) disabled @endif" style="box-shadow: none !Important"
                            onclick="return confirm('Yakin data siswa ini akan dihapus?')">
                             <i class="fas fa-trash"></i> Hapus
                         </a>

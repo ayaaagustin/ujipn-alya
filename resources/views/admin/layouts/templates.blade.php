@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admin Dashboard | {{ $title }}</title>
+    <title>Sarpas PN || {{ $title }}</title>
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/dashboardadmin.css" />
+    <link rel="icon" href="/logo_smkpn.jpg">
 </head>
 <body>
 <div class="dashboard-wrapper d-flex">
@@ -49,5 +50,7 @@
         window.location.href = this.href;
     });
 </script>
+
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>
