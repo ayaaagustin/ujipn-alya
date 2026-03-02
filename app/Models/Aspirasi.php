@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Aspirasi extends Model
 {
@@ -15,7 +15,6 @@ class Aspirasi extends Model
     {
         return $this->belongsTo(Siswa::class);
     }
-
     public function kategori(): BelongsTo
     {
         return $this->belongsTo(Kategori::class);

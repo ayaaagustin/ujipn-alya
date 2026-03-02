@@ -18,19 +18,19 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('admin.kategori') }}">
                 <i class="fa-solid fa-tags"></i>
                 <span>Kelola Kategori</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('admin.aspirasi') }}">
                 <i class="fa-solid fa-comment-dots"></i>
                 <span>Data Aspirasi</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('admin.laporan') }}">
                 <i class="fa-solid fa-file-lines"></i>
                 <span>Laporan</span>
             </a>

@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers\Siswa;
 
+use App\Http\Controllers\Controller;
 use App\Models\Aspirasi;
 use App\Models\Kategori;
+use App\Services\TanggapanAspirasiService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+public function __construct(
+        private TanggapanAspirasiService $service
+    ) {}
+
+
     public function index()
     {
-        $siswa_id = auth()->user()->siswa->id;
+        $siswa_id = Auth::user()->siswa->id;
         $data = [
-            'aspirasi' => Aspirasi::where('siswa_id', $siswa_id)->get(),
+            'aspirasi' => Aspirasi::where('siswa_id', $siswa_id)->paginate(4),
             'total_aspirasi' => Aspirasi::where('siswa_id', $siswa_id)->get()->count(),
             'aspirasi_menunggu' => Aspirasi::where([
                 'siswa_id' => $siswa_id,
@@ -22,20 +29,26 @@ class DashboardController extends Controller
             'aspirasi_diproses' => Aspirasi::where([
                 'siswa_id' => $siswa_id,
                 'status' => 'diproses'
-            ])->get()->count(), 
+            ])->get()->count(),
             'aspirasi_selesai' => Aspirasi::where([
                 'siswa_id' => $siswa_id,
                 'status' => 'selesai'
             ])->get()->count(),
+            'aspirasi_ditolak' => Aspirasi::where([
+                'siswa_id' => $siswa_id,
+                'status' => 'ditolak'
+            ])->get()->count(),
         ];
+
         return view('siswa.dashboard', $data);
     }
 
-    public function  tambahAspirasi()
+    public function tambahAspirasi()
     {
         $data = [
             'kategori' => Kategori::all(),
         ];
+
         return view('siswa.form-aspirasi', $data);
     }
 
@@ -56,6 +69,44 @@ class DashboardController extends Controller
         $validatedData['status'] = 'menunggu';
 
         Aspirasi::create($validatedData);
-        return redirect()->route('siswa.dashboard');
+        return redirect()->route('siswa.dashboard')->with('success', 'Aspirasi berhasil disimpan!');
     }
+
+    public function editAspirasi(Aspirasi $aspirasi)
+    {
+        $data = [
+            'aspirasi' => $aspirasi,
+            'kategori' => Kategori::all(),
+        ];
+
+        return view('siswa.form-edit-aspirasi', $data);
+    }
+
+    public function updateAspirasi(Request $request)
+    {
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+        ], [
+            'kategori_id' => 'Kategori harus dipilih!',
+            'judul' => 'Judul harus diisi!',
+            'isi' => 'Isi pesan/aduan harus diisi!',
+        ]);
+        $aspirasi = Aspirasi::find($request->id);
+        $aspirasi->update($validatedData);
+        return redirect()->route('siswa.dashboard')->with('success', 'Aspirasi berhasil di update!');
+    }
+
+    public function hapusAspirasi(Aspirasi $aspirasi)
+    {
+        try {
+            $this->service->delete($aspirasi);
+            return redirect()->route('siswa.dashboard')->with('success', 'Aspirasi berhasil dihapus dari database!');
+        } catch (\Throwable $e) {
+            dd($e);
+            return redirect()->route('siswa.dashboard')->with('error', 'Aspirasi gagal dihapus dari database!');
+
+        }
+    }
+
 }

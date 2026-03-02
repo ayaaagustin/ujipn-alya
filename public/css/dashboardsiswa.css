@@ -1,6 +1,3 @@
-/* ========================
-   RESET
-======================== */
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +9,6 @@ body {
     background: #f4f6fb;
 }
 
-/* ========================
-   TOPBAR
-======================== */
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -57,26 +51,17 @@ body {
     margin-right: 5px;
 }
 
-/* ========================
-   CONTAINER
-======================== */
 .container {
     max-width: 1100px;
     margin: 30px auto;
     padding: 20px;
 }
 
-/* ========================
-   WELCOME
-======================== */
 .welcome {
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* ========================
-   CARDS
-======================== */
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -100,7 +85,6 @@ body {
     margin-top: 10px;
 }
 
-/* CARD COLORS */
 .blue {
     background: linear-gradient(135deg, #4f79ff, #6b8cff);
 }
@@ -114,9 +98,6 @@ body {
     background: linear-gradient(135deg, #16a085, #1abc9c);
 }
 
-/* ========================
-   SUBMIT BUTTON
-======================== */
 .submit-box {
     text-align: center;
     margin-bottom: 30px;
@@ -132,9 +113,6 @@ body {
     cursor: pointer;
 }
 
-/* ========================
-   TABLE
-======================== */
 .table-box {
     background: white;
     padding: 20px;
@@ -162,31 +140,27 @@ td {
     border-bottom: 1px solid #ddd;
 }
 
-/* ========================
-   STATUS BADGES
-======================== */
 .status {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
     color: white;
-    text-transform: capitalize; /* otomatis huruf pertama besar */
+    text-transform: capitalize;
 }
 
-/* class status sesuai database */
 .status.menunggu {
     background: #f2994a;
-} /* oranye */
+}
 .status.diproses {
     background: #27ae60;
-} /* hijau */
+}
 .status.selesai {
     background: #16a085;
-} /* teal */
+}
+.status.ditolak {
+    background: #dc2626;
+}
 
-/* ========================
-   RESPONSIVE
-======================== */
 @media (max-width: 900px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);

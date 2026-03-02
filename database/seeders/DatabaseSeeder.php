@@ -2,31 +2,33 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Siswa;
 use App\Models\Aspirasi;
 use App\Models\Kategori;
+use App\Models\User;
+use App\Models\Siswa;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
+    use WithoutModelEvents;
+
     /**
      * Seed the application's database.
      */
-     public function run(): void
-     {
+    public function run(): void
+    {
         $dataUser = [
             [
-                'nama' => 'Slamet Kuatno, S.pd',
-                'username' => 'slametkuatno',
-                'email' => 'slametkuatno@gmail.com',
-                'jabatan' => 'waka Sarpras',
+                'nama' => 'Alya Agustin, S.Kom',
+                'username' => 'alyaagustin',
+                'email' => 'alyaagustin228@gmail.com',
+                'jabatan' => 'Waka Sarpras',
                 'password' => bcrypt('admin'),
                 'role' => 'admin'
             ],
             [
-                'nama' => 'Maya Safitri, S.pd',
+                'nama' => 'Maya Safitri',
                 'username' => 'user-12345678',
                 'email' => 'mayasafitri@gmail.com',
                 'jabatan' => '',
@@ -34,16 +36,16 @@ class DatabaseSeeder extends Seeder
                 'role' => 'siswa'
             ],
             [
-                'nama' => 'Cecep Spidermen',
-                'username' => 'user-12345668',
-                'email' => 'spidermen@gmail.com',
+                'nama' => 'Andi Prayoga',
+                'username' => 'user-12345679',
+                'email' => 'andiprayoga@gmail.com',
                 'jabatan' => '',
                 'password' => bcrypt('123456'),
                 'role' => 'siswa'
             ],
         ];
 
-        foreach($dataUser as $user){
+        foreach ($dataUser as $user) {
             User::create($user);
         }
 
@@ -61,8 +63,7 @@ class DatabaseSeeder extends Seeder
                 'jurusan' => 'PPLG'
             ],
         ];
-
-        foreach($dataSiswa as $siswa){
+        foreach ($dataSiswa as $siswa) {
             Siswa::create($siswa);
         }
 
@@ -73,19 +74,19 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'nama_kategori' => 'Toilet',
-                'deskripsi' => 'Sarana dan prasana kamar mandi/toilet siswa'
+                'deskripsi' => 'Sarana dan prasarana kamar mandi/toilet siswa'
             ],
             [
                 'nama_kategori' => 'Sekolah',
-                'deskripsi' => 'Sarana dan prasana sekolah'
+                'deskripsi' => 'Sarana dan prasarana sekolah'
             ],
             [
                 'nama_kategori' => 'Laboratorium Komputer',
-                'deskripsi' => 'Sarana dan prasana laboratorium komputer sekolah'
+                'deskripsi' => 'Sarana dan prasarana laboratorium komputer sekolah'
             ],
         ];
 
-        foreach($dataKategori as $kategori){
+        foreach ($dataKategori as $kategori) {
             Kategori::create($kategori);
         }
 
@@ -93,34 +94,48 @@ class DatabaseSeeder extends Seeder
             [
                 'siswa_id' => 1,
                 'kategori_id' => 1,
-                'judul' => 'AC kurang dingin',
-                'isi' => 'Mohon di cek, AC di Ruang Kelas 12 RPL kurang dingin',
+                'judul' => 'AC Kurang Dingin',
+                'isi' => 'Mohon di cek, AC di ruang kelas 12 RPL kurang dingin',
                 'status' => 'menunggu',
             ],
             [
                 'siswa_id' => 1,
                 'kategori_id' => 1,
-                'judul' => 'Lampu mati',
-                'isi' => 'Mohon di cek, Lampu di Ruang Kelas 12 RPL mati',
-                'status' => 'diproses',
+                'judul' => 'Lampu Mati',
+                'isi' => 'Mohon di cek, lampu di ruang kelas 12 RPL mati',
+                'status' => 'menunggu',
             ],
             [
                 'siswa_id' => 1,
                 'kategori_id' => 1,
-                'judul' => 'Kursi kurang',
-                'isi' => 'Mohon di cek, Kursi di Ruang Kelas 12 RPL kurang',
-                'status' => 'diproses',
+                'judul' => 'Bangku Kurang',
+                'isi' => 'Mohon di cek, jumlah bangku tidak sesuai dengan jumlah total siswa di ruang kelas 12 RPL',
+                'status' => 'menunggu',
             ],
             [
                 'siswa_id' => 2,
                 'kategori_id' => 2,
-                'judul' => 'Toilet mampet',
-                'isi' => 'Mohon di cek, Toilet perempuan di kamar 2, saluran pembuangannya mampet',
+                'judul' => 'Toilet Mampet',
+                'isi' => 'Mohon di cek, toilet perempuan di kamar 2, saluran pembuangannya mampet',
+                'status' => 'menunggu',
+            ],
+            [
+                'siswa_id' => 2,
+                'kategori_id' => 1,
+                'judul' => 'Lampu Mati',
+                'isi' => 'Mohon di cek, lampu mati dongs',
+                'status' => 'menunggu',
+            ],
+            [
+                'siswa_id' => 2,
+                'kategori_id' => 1,
+                'judul' => 'Papan Tulis Rusak',
+                'isi' => 'Mohon di cek, papan tulis sudah pada bolong',
                 'status' => 'menunggu',
             ],
         ];
 
-        foreach($dataAspirasi as $aspirasi){
+        foreach ($dataAspirasi as $aspirasi) {
             Aspirasi::create($aspirasi);
         }
     }

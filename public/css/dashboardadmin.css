@@ -160,6 +160,9 @@ td {
 .selesai {
     background-color: #14b8a6;
 }
+.ditolak {
+    background-color: #dc2626;
+}
 
 /* VIEW BUTTON */
 .btn-view {
